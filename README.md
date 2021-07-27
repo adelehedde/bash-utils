@@ -86,11 +86,11 @@ unit_test::run
 docker build -t bash-utils .
 
 # Run your script
-docker run -it --rm -v <local_script_directory>/my_dir:/opt/my_dir bash-utils bash
-BASH_UTILS_HOME=/opt/bash-utils bash my_dir/my_script.sh 
+docker run -it --rm -v <path_to_your_local_script_directory>/my_dir:/opt/my_dir bash-utils bash
+BASH_UTILS_HOME=/opt/bash-utils bash /opt/my_dir/my_script.sh
 # Unit Testing
-docker run -it --rm -v <local_project_path>/bash-utils/test:/opt/bash-utils/test bash-utils bash
-BASH_UTILS_HOME=/opt/bash-utils bash test/<script.sh>
+docker run -it --rm -v <local_project_path>/bash-utils/test:/opt/test bash-utils bash
+BASH_UTILS_HOME=/opt/bash-utils bash /opt/test/<script.sh>
 ```
 
 # Links
